@@ -89,7 +89,7 @@ sonar-runner是一个已经预打包好了的程序，你可以设置一个环�
 sornar资源放在云平台的/opt路径，首先把其复制到我们的主目录，并且解压之：
 
 ```
-cp /opt/sonar-runner-dist-2.7.zip ~/sonar-runner.zip
+cp /opt/sonar-runner-dist-2.4.zip ~/sonar-runner.zip
 cd ~/
 unzip sonar-runner.zip
 ```
