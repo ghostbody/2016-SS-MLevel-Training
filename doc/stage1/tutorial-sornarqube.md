@@ -89,7 +89,7 @@ sonar-runner是一个已经预打包好了的程序，你可以设置一个环�
 sornar资源放在云平台的/opt路径，首先把其复制到我们的主目录，并且解压之：
 
 ```
-cp /opt/sonar-runner-dist-2.7.zip !/sonar-runner.zip
+cp /opt/sonar-runner-dist-2.7.zip ~/sonar-runner.zip
 cd ~/
 unzip sonar-runner.zip
 ```
@@ -116,6 +116,10 @@ INFO: Linux 4.4.0-24-generic amd64
 ```
 
 如果想设置环境变量，可以修改~/.bashrc文件，这里不做介绍，有兴趣的同学可以做。
+
+### 你可能会遇到的问题
+
+Docker中的sonarqube依赖于JDK8环境，请修改sornar-runner的shell脚本，将`JAVA_CMD`替换为`/usr/lib/jvm/java-8-openjdk-amd64/bin/java`
 
 ### 配置你的项目
 
@@ -146,11 +150,13 @@ java-module.sonar.projectBaseDir=./
 ~/sonar-runner/bin/sonar-runner /path/to/your/project 
 ```
 
-注意是你的项目路径
+注意/path/to/your/project是你的项目路径
 
 ## 查看结果
 
 在web界面上查看 http://localhost:9000/
+
+实训后期阶段会对代码质量有一定的量化要求，请查看wiki相关界面。
 
 ## 参考
 
