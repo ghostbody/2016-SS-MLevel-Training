@@ -45,37 +45,43 @@
   **重启或者注销计算机使其生效**
 
  ## 测试Junit安装成功
- 1.创建java类文件TestJunit.java
+ 1.创建java类文件HelloWorld.java
  ```java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-public class TestJunit {
-@Test
-public void testAdd() {
-   String str= "Junit is working fine";
-   assertEquals("Junit is working fine",str);
-}
+import java.util.*;
+
+public class HelloWorld {
+	String str;
+	public void hello() {
+		str="Hello World!";
+	}
+	public String getStr() {
+		return str;
+	}
 }
  ```
- 2.创建java类文件TestRunner.java
+ 2.创建java类文件HelloWorldTest.java
 ```java
-  import org.junit.runner.JUnitCore;
-  import org.junit.runner.Result;
-  import org.junit.runner.notification.Failure;
+  import static org.junit.Assert.*;
+import org.junit.Test;
 
-  public class TestRunner {
-   public static void main(String[] args) {
-      Result result = JUnitCore.runClasses(TestJunit.class);
-      for (Failure failure : result.getFailures()) {
-         System.out.println(failure.toString());
-      }
-      System.out.println(result.wasSuccessful());
-   }
+public class HelloWorldTest {
+	public  HelloWorld helloWorld = new HelloWorld();
+	@Test
+	public void testHelloWorld() {
+		helloWorld.hello();
+		assertEquals("Hello World!", helloWorld.getStr());
+	}
 }
 ```
 3.验证结果
 ```
-javac TestJunit.java TestRunner.java
-java TestRunner
+javac HelloWorldTest.java 
+java -ea org.junit.runner.JUnitCore HelloWorldTest
 ```
-若结果为true,则设置成功，否则失败
+设置成功运行结果
+JUnit version 4.9
+.
+Time: 0.004
+
+OK (1 test)
+
