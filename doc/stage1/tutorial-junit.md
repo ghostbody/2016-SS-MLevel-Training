@@ -25,9 +25,9 @@
   安装java的路径可能不同。
 
  3.设置环境变量
- 在/etc/profile文件中设置junit的环境变量，具体方法如下：
+ 在~/.bashrc文件中设置junit的环境变量，具体方法如下：
  ```
- sudo gedit /etc/profile
+ sudo gedit ~/.bashrc
  ```
  在上述文件中结尾加上以下内容
  ```
@@ -37,10 +37,10 @@
  >注意其中/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib为java中的安装路径，不同计算机
  安装java的路径可能不同。
 
- 4.source /etc/profile使环境变量生效
+ 4.source ~/.bashrc使环境变量生效
  具体步骤：
   ```
-  sudo source /etc/profile
+  sudo source ~/.bashrc
   ```
   **重启或者注销计算机使其生效**
 
