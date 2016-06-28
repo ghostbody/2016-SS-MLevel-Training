@@ -28,14 +28,14 @@
  3. 设置环境变量
  在~/.bashrc文件中设置junit的环境变量，具体方法如下：
  ```
- sudo gedit ~/.bashrc
+ gedit ~/.bashrc
  ```
  在上述文件中结尾加上以下内容
  ```
- export JUNIT_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib
+ export JUNIT_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib
  export CLASSPATH=.:$CLASSPATH:$JUNIT_HOME/junit-4.9.jar
  ```
- >注意其中/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib为java中的安装路径，不同计算机
+ >注意其中/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib为java中的安装路径，不同计算机
  安装java的路径可能不同。
 
  4. source ~/.bashrc使环境变量生效
